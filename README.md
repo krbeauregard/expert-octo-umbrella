@@ -23,3 +23,9 @@ barcode_scanner_video.py
 green_screen.py
   Is the beginning of a 'green screen' capability for the system.
   It is grainy and blotchy at the moment. Some erosion and dilation should help.
+
+pivideostream.py and videostream.py
+  Files belong to imutils package. These are modified to use the raspberry pi camera
+  as default and to try to take advantage of the built-in pi camera video effects.
+  They allow me to not have to specify the camera when I shift code between my pi and
+  desktop machine.
