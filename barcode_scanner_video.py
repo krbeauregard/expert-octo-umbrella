@@ -33,8 +33,9 @@ colors = {'1':(255,255,255),    #white
 while True:
     frame = vs.read()
     frame = imutils.resize(frame, width=400)
-##    use line below to flip image vertically
-##    frame = imutils.rotate(imutils.resize(frame,width=400), 180)
+    frame = imutils.rotate(frame, 180)      #comment if video is upside-down
+##  For Pi Camera, this results in 300x400
+##  Dimensions for other platforms would need to be verified
 
     barcodes = pyzbar.decode(frame)
 

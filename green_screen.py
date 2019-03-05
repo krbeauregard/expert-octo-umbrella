@@ -56,10 +56,11 @@ cv.createTrackbar('x2', 'panel', 400, 400, nothing)
 
 
 while True:
-    frame = imutils.rotate(vs.read(), 180)
+    frame = vs.read()
     frame = imutils.resize(frame, width=400)
-    ## For Pi Camera, this results in 300x400
-    ## Dimensions for other platforms would need to be verified   
+    frame = imutils.rotate(frame, 180)      #comment if video is upside-down
+##  For Pi Camera, this results in 300x400
+##  Dimensions for other platforms would need to be verified   
 
 
     lh = cv.getTrackbarPos('Lh', 'panel')
@@ -104,6 +105,8 @@ while True:
     k = cv.waitKey(1) & 0xFF
     if k == ord('q'):
         break
+
+print("[Info] cleaning up...")
 
 cv.destroyAllWindows()
 vs.stop()
